@@ -1,0 +1,58 @@
+local Sound = Instance.new("Sound")
+Sound.Name = "Pickup"
+Sound.SoundId = "rblxasset://11133465528"
+Sound.Parent = game.Players.LocalPlayer.PlayerGui.HackingGUI
+
+if game.Workspace:FindFirstChild(game.Players.LocalPlayer.Name):FindFirstChildOfClass("Tool") then
+if hookfunction then
+    game:GetService("StarterGui"):SetCore("SendNotification",{
+        Title = "Made by quinn#2702", 
+        Text = "Applying settings to weapon...",
+        Duration = 1 
+    })
+local script = game:GetService("Players").LocalPlayer.PlayerGui["GunMaster_Local"]
+local senv = getsenv(script)
+
+local getammo = senv.reloadWeapon
+hookfunction(senv.checkStats, function(...)
+    print("check")
+end)
+
+wait(1)
+Sound:Play()
+local _c = game.Workspace:FindFirstChild(game.Players.LocalPlayer.Name)
+					local _t = _c:FindFirstChildOfClass("Tool")
+					if _t then
+                        if _G.PackAPunchSettings.InfiniteClip == true then
+					_t:SetAttribute("MaxClip", math.huge)
+                        end
+                        if _G.PackAPunchSettings.NoRecoil == true then
+					_t:SetAttribute("MaxRecoil", 0)
+                        end
+                        if _G.PackAPunchSettings.ModdedFirerate == true then
+					_t:SetAttribute("Firerate", 0)
+                        end
+                        if _G.PackAPunchSettings.InstantKill == true then
+                    _t:SetAttribute("Damage", math.huge)
+                        end
+                        if _G.PackAPunchSettings.AutomaticWeapon == true then
+					_t:SetAttribute("Automatic", true)
+                        end
+                    game:GetService("StarterGui"):SetCore("SendNotification",{
+                        Title = "Made by quinn#2702",
+                        Text = "quinn just pack-a-punched your ".._t.Name.."!"
+                    })
+                    else
+                        game:GetService("StarterGui"):SetCore("SendNotification",{
+                            Title = "Made by quinn#2702", 
+                            Text = "Your execute is not a high enough level to use this! (Recommended: Synapse X)" 
+                        })
+                    end
+               
+                end
+            else
+                game:GetService("StarterGui"):SetCore("SendNotification",{
+                    Title = "Made by quinn#2702", 
+                    Text = "Equip a weapon to pack-a-punch it." 
+                })
+            end
