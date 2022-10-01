@@ -33,7 +33,7 @@ local _c = game.Workspace:FindFirstChild(game.Players.LocalPlayer.Name)
 					_t:SetAttribute("Firerate", 0)
                         end
                         if _G.PackAPunchSettings.InstantKill == true then
-                    _t:SetAttribute("Damage", math.huge)
+                    _t:SetAttribute("Damage", 500)
                         end
                         if _G.PackAPunchSettings.AutomaticWeapon == true then
 					_t:SetAttribute("Automatic", true)
